@@ -5,7 +5,7 @@
 
 ## 시연 영상
 
-[frontend-todolist.mp4](./frontend-todolist.mp4) (25초)
+https://github.com/user-attachments/assets/afb82c22-02c1-4886-afcc-2d42a120fd8c
 
 빈 목록 → 할 일 추가 → 수정(수정 완료 / 취소) → 삭제 → 빈 목록 순서로 동작을 보여 줍니다.
 
