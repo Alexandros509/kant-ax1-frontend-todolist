@@ -1,57 +1,76 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To do List</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
     <script defer src="./js/todo.js"></script>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header box-border h-16 flex items-center">
-        <p class="pl-6 text-2xl">To do List</p>
+      <p class="pl-6 text-2xl">To do List</p>
     </header>
     <main class="main">
-        <div class=" justify-center">
-            <form id="todo-form" name="todoForm" class="input-box box-border flex-col w-full flex p-6 justify-center items-center">
-                <label class="box-border flex w-full m-6 items-center text-2xl">
-                    <span class="mx-6">날짜</span>
-                    <input type="date" name="todoDate" class="border box-border ml-6 flex-1 text-lg px-3 py-2">
-                </label>
-                <label class="box-border flex w-full m-6 items-center text-2xl">
-                    <span class="mx-6">제목</span>
-                    <input type="text" name="todoTitle" class="border box-border ml-6 flex-1 text-lg px-3 py-2" placeholder="제목 입력">
-                </label>
-                <label class="box-border flex w-full m-6 items-center text-2xl">
-                    <span class="mx-6">내용</span>
-                    <textarea name="todoContent" placeholder="내용 입력"
-                    class="border box-border h-32 ml-6 flex-1 text-lg px-3 py-2 resize-none"></textarea>
-                </label>
-                <button class="button-to-register w-60 h-16 rounded-lg m-4 text-2xl cursor-pointer" id="addBtn">등록</button>
-            </form>
-        </div>
-        <div class="list-list justify-evenly flex-1 justify-center items-center">
-            <ul class="h-full flex flex-col" id="ordered-to-do-list">
-                <!-- <div class="to-do-list w-80 h-64 box-border rounded-lg flex-col flex p-4 m-6">
-                    <div class="list-date-title box-border w-full mb-2">[$(date)]$(title)</div>
-                    <div class="list-content-wrap flex flex-col flex-1 min-h-0 overflow-hidden">
-                        <div class="list-content box-border w-full flex-1 mb-2 overflow-y-auto wrap-break-word">
-                            $(content)</div>
-                        <div class="list-buttons box-border w-full flex gap-2 shrink-0">
-                            <button
-                                class="button-content-edit rounded-lg box-border h-8 flex flex-1 justify-center items-center cursor-pointer">수정</button>
-                            <button
-                                class="button-content-delete rounded-lg box-border h-8 flex flex-1 justify-center items-center cursor-pointer"
-                                id="removeBtn">삭제</button>
-                        </div>
-                    </div>
-                </div> -->
-            </ul>
-        </div>
+      <div class="justify-center">
+        <form
+          id="todo-form"
+          name="todoForm"
+          class="input-box box-border flex-col w-full flex p-6 justify-center items-center"
+        >
+          <label class="box-border flex w-full m-6 items-center text-2xl">
+            <span class="mx-6">날짜</span>
+            <input
+              type="date"
+              name="todoDate"
+              class="border box-border ml-6 flex-1 text-lg px-3 py-2"
+            />
+          </label>
+          <label class="box-border flex w-full m-6 items-center text-2xl">
+            <span class="mx-6">제목</span>
+            <input
+              type="text"
+              name="todoTitle"
+              class="border box-border ml-6 flex-1 text-lg px-3 py-2"
+              placeholder="제목 입력"
+            />
+          </label>
+          <label class="box-border flex w-full m-6 items-center text-2xl">
+            <span class="mx-6">내용</span>
+            <textarea
+              name="todoContent"
+              placeholder="내용 입력"
+              class="border box-border h-32 ml-6 flex-1 text-lg px-3 py-2 resize-none"
+            ></textarea>
+          </label>
+          <button
+            type="submit"
+            class="button-to-register w-60 h-16 rounded-lg m-4 text-2xl cursor-pointer"
+            id="addBtn"
+          >
+            등록
+          </button>
+          <p id="form-message"></p>
+          <button type="button" id="cancel-btn" hidden>취소</button>
+        </form>
+      </div>
+      <div class="list-list justify-evenly flex-1 justify-center items-center">
+        <input
+          id="todo-search"
+          type="search"
+          placeholder="제목 또는 내용 검색"
+          class="border box-border m-6 text-lg px-3 py-2"
+        />
+        <select id="todo-sort" class="border box-border m-6 text-lg px-3 py-2">
+          <option value="date-asc">날짜 오름차순</option>
+          <option value="date-desc">날짜 내림차순</option>
+        </select>
+        <p id="todo-count"></p>
+        <p id="empty-message"></p>
+        <ul class="h-full flex flex-col" id="ordered-to-do-list"></ul>
+      </div>
     </main>
-</body>
-
+  </body>
 </html>
